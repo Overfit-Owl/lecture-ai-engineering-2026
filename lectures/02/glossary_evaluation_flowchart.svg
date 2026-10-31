@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="850" viewBox="0 0 1300 850" role="img" aria-label="講座用語集の4条件比較と評価フロー">
+  <defs>
+    <style>
+      .title{font:700 25px 'Yu Gothic','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;fill:#17375d}
+      .subtitle{font:14px 'Yu Gothic','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;fill:#65758a}
+      .txt{font:600 16px 'Yu Gothic','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;fill:#233247;text-anchor:middle;dominant-baseline:middle}
+      .small{font:13px 'Yu Gothic','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;fill:#65758a}
+      .n{stroke:#b8cee3;stroke-width:1.5;rx:12}
+      .blue{fill:#e8f1fc}.green{fill:#e8f6ef}.yellow{fill:#fff1d7}
+      .line{fill:none;stroke:#879caf;stroke-width:2;marker-end:url(#arrow)}
+      .join{fill:none;stroke:#879caf;stroke-width:2}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#879caf"/></marker>
+  </defs>
+  <rect width="1300" height="850" fill="white"/>
+  <text class="title" x="595" y="46" text-anchor="middle">講座用語集の評価フロー</text>
+  <text class="subtitle" x="595" y="75" text-anchor="middle">4条件の比較・暫定評価・ChatGPTによる仮判定・人間による最終確認</text>
+
+  <rect class="n blue" x="420" y="102" width="350" height="55"/><text class="txt" x="595" y="130">共通の評価問題30問</text>
+  <path class="line" d="M595 157 L150 192"/><path class="line" d="M595 157 L443 192"/><path class="line" d="M595 157 L746 192"/><path class="line" d="M595 157 L1040 192"/>
+
+  <rect class="n blue" x="32" y="193" width="236" height="58"/><text class="txt" x="150" y="222">学習前32bit</text>
+  <rect class="n blue" x="325" y="193" width="236" height="58"/><text class="txt" x="443" y="222">LoRA学習後32bit</text>
+  <rect class="n blue" x="628" y="193" width="236" height="58"/><text class="txt" x="746" y="222">学習前4bit</text>
+  <rect class="n green" x="922" y="193" width="236" height="58"/><text class="txt" x="1040" y="222">用語集検索 (LLMなし)</text>
+
+  <path class="join" d="M150 251 V280 H746 V251"/><path class="join" d="M443 251 V280"/>
+  <path class="line" d="M443 280 V307"/><path class="line" d="M1040 251 V307"/>
+  <rect class="n blue" x="275" y="308" width="336" height="54"/><text class="txt" x="443" y="335">モデルの生成回答90件</text>
+  <rect class="n green" x="878" y="308" width="324" height="54"/><text class="txt" x="1040" y="335">用語集の定義を直接返す30件</text>
+
+  <path class="line" d="M443 362 V399"/><path class="line" d="M1040 362 V399"/>
+  <rect class="n blue" x="254" y="400" width="378" height="56"/><text class="txt" x="443" y="428">文字列類似度による暫定評価</text>
+  <rect class="n green" x="862" y="400" width="356" height="56"/><text class="txt" x="1040" y="428">完全一致 / 未収録判定</text>
+
+  <path class="join" d="M443 456 V485 H1040 V456"/><path class="line" d="M741 485 V517"/>
+  <rect class="n yellow" x="559" y="518" width="364" height="60"/><text class="txt" x="741" y="548">ChatGPTが120回答を仮判定</text>
+  <path class="line" d="M741 578 V611"/>
+  <rect class="n yellow" x="559" y="612" width="364" height="60"/><text class="txt" x="741" y="642">人間が120回答を確認・確定</text>
+  <path class="line" d="M741 672 V706"/>
+  <rect class="n blue" x="559" y="707" width="364" height="58"/><text class="txt" x="741" y="736">4条件の結果を比較・考察</text>
+</svg>

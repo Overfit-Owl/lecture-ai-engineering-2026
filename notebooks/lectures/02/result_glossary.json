@@ -1,0 +1,46 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 3,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 200,
+    "gen": {
+      "do_sample": false
+    }
+  },
+  "dataset": {
+    "rows": 116,
+    "terms": 58,
+    "train_terms": 46,
+    "valid_terms": 6,
+    "heldout_terms": 6
+  },
+  "metrics": [
+    {
+      "label": "before",
+      "n": 30,
+      "proxy_rate": 0.0,
+      "mean_similarity": 0.075,
+      "seconds": 376.4
+    },
+    {
+      "label": "after",
+      "n": 30,
+      "proxy_rate": 0.0,
+      "mean_similarity": 0.2,
+      "seconds": 99.3
+    },
+    {
+      "label": "lookup",
+      "n": 30,
+      "proxy_rate": 1.0
+    }
+  ],
+  "note": "proxy_rate is based on text similarity >=0.55 (or unknown-term abstention), not human-reviewed correctness"
+}
